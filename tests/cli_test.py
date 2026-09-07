@@ -11,6 +11,7 @@ import pytest
 
 from trainite.config.registry import MODEL_SPECS, DATASET_SPECS, PREPROCESSOR_SPECS, TRAINER_SPECS
 
+
 def get_valid_project_combinations():
     valid_combinations = []
     for model_name in MODEL_SPECS.keys():
@@ -24,7 +25,8 @@ def get_valid_project_combinations():
             for trainer_name in TRAINER_SPECS.keys():
                 valid_combinations.append((all_models, dataset_name, trainer_name))
     return valid_combinations
-        
+
+
 @pytest.mark.parametrize(
     "models, dataset, trainer",
     get_valid_project_combinations(),
